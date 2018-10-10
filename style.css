@@ -546,6 +546,10 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   padding: 20px .625rem;
 }
 
+.page-tabs {
+  background-color: #3e3e42;
+}
+
 .help-center {
   padding: 0px;
   width: 100%;
@@ -592,5 +596,68 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
 .help-center .hc-search-button .btn .mobile-icon-search {
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
+}
+
+#solutions-index-home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#solutions-index-home .cs-s {
+  padding: 15px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  margin: 0;
+  max-width: 100%;
+  display: none;
+}
+
+#solutions-index-home .cs-s:nth-child(-n+4) {
+  display: block;
+}
+
+#solutions-index-home .cs-s:nth-child(-n+3) .solution {
+  min-height: 250px;
+}
+
+@media screen and (min-width: 769px) {
+  #solutions-index-home .cs-s:nth-child(-n+3) {
+    max-width: 33%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33%;
+            flex: 0 0 33%;
+  }
+}
+
+#solutions-index-home .cs-s .solution {
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  min-height: 100px;
+}
+
+#solutions-index-home .cs-s h3 a {
+  color: #9aa1a6;
+  font-weight: 300;
+  font-size: 25px;
 }
 /*# sourceMappingURL=style.css.map */
