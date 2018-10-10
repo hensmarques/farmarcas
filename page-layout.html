@@ -1,12 +1,10 @@
 {{ header }}
-<div class="page">
-
 
 	<!-- Search and page links for the page -->
 	{% if portal.current_tab and portal.current_tab == "home" %}
 		<section class="help-center rounded-6">
 			<div class="hc-search">
-				<div class="hc-search-c">
+				<div class="page hc-search-c">
 					<h2 class="heading hide-in-mobile">{% translate header.help_center %}</h2>
 					{% snippet search_form %}
 				</div>
@@ -16,6 +14,9 @@
 			</div>
 		</section>
 	{% endif %}
+
+
+<div class="page">
 
 	<!-- Notification Messages -->
 	{{ page_message }}
