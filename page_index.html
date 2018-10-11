@@ -22,6 +22,20 @@
 		{% endif %}
 	{% endfor %}
 </section>
+
+<section class="main content" id="principais-conteudos">
+	<h3>Principais Conteudos</h3>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ut nam suscipit mollitia molestias explicabo.</p>
+	{% for category in portal.solution_categories %}
+		{% if category.folders_count > 0 %}
+			{% for folder in category.folders %}
+				{% for article in folder.articles %}
+					<p>{{ article.title }} - {{ article.hits }} </p>
+				{% endfor %}
+			{% endfor %}
+		{% endif %}
+	{% endfor %}
+</section>
 {% endif %}
 
 {% if portal.has_forums %}
