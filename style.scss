@@ -202,6 +202,7 @@ li.article-item:before{content:"\f22b"}
                     border-bottom: 1px solid #ccc;
                     margin-bottom: 0;
 
+                    &:last-child{ border-bottom: none; }
                     &:before{ margin-left: 20px; }
                 }
             }

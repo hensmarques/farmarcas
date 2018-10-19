@@ -739,6 +739,10 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   margin-bottom: 0;
 }
 
+.fc-solution-category .cs-g.article-list ul li:last-child {
+  border-bottom: none;
+}
+
 .fc-solution-category .cs-g.article-list ul li:before {
   margin-left: 20px;
 }
