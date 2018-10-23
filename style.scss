@@ -41,8 +41,16 @@ li.article-item:before{content:"\f22b"}
     .help-center-sc .hc-search .hc-search-input input.special {padding: 0px 0px 3px 10px}
     .agent-details .agent_name_text {padding-top: 10px; font-size: 35px; font-weight:600 }
 
+    @import url('https://fonts.googleapis.com/css?family=Roboto:100,300');
+
+    .header-wrapper{
+        background-image: url('http://farmarcas.com.br/radar/imagens_freshdesk/header_bg.png');
+        background-size: cover;
+        background-position: center;
+    }
+
     .banner{
-        background-color: #303033;
+        background-color: transparent;
         border: none;
 
         &-wrapper{
@@ -54,13 +62,39 @@ li.article-item:before{content:"\f22b"}
         background-color: #3e3e42;
     }
 
+    .heading{
+        padding-bottom: 10px;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 57px;
+            border-radius: 3px;
+            height: 5px;
+            background: linear-gradient(to right, #ff8900, #fe4215);
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0px;
+            transition: 0.6s;
+        }
+
+        &.left:after{
+            left: 30px;
+        }
+
+        &:hover:after{ filter: invert(100%); }
+    }
+
     .help-center{
         padding: 0px;
         width: 100%;
-        background: #303033;
+        background: transparent;
 
         .hc-search{
             width: 100%;
+
+            &-form{ border: none; }
 
             &-c{
                 display: flex;
@@ -79,15 +113,24 @@ li.article-item:before{content:"\f22b"}
             &-input{
                 input{
                     font-size: 18px;
-                    height: 70px;
+                    height: 80px;
                 }
             }
 
             &-button .btn{
-                height: 70px;
-                border-radius: 0;
+                height: 80px;
+                border-radius: 0 3px 3px 0;
+                background: linear-gradient(to right, #ff8900, #fe4215);
 
-                .mobile-icon-search{ transform: scale(1.4); }
+                .mobile-icon-search{
+                    display: inline-block;
+                    width: 28px;
+                    height: 28px;
+                    background-image: url('http://farmarcas.com.br/radar/imagens_freshdesk/icon_search.png');
+                    background-size: cover;
+
+                    &:before{ display: none; }
+                }
             }
         }
     }
@@ -126,6 +169,14 @@ li.article-item:before{content:"\f22b"}
                 display: block;
             }
 
+            &:nth-child(n+4) {
+                h3{
+                    width: initial;
+                    display: inline-block;
+                    margin: 0 auto;
+                }
+            }
+
             &:nth-child(-n+3) {
                 .solution{
                     min-height: 250px;
@@ -138,20 +189,37 @@ li.article-item:before{content:"\f22b"}
             }
 
             .solution{
-                box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
                 border-radius: 8px;
                 display: flex;
-                align-items: center;
-                flex-direction: column;
+                align-items: flex-end;
                 padding: 20px;
-                justify-content: center;
-                text-align: center;
+                justify-content: flex-start;
                 min-height: 100px;
+                background-size: cover;
+                background-position: center;
+
+                &.category_36000115330{
+                    background-image: url(http://farmarcas.com.br/radar/imagens_freshdesk/card_1_bg.png);
+                }
+
+                &.category_36000116002{
+                    background-image: url(http://farmarcas.com.br/radar/imagens_freshdesk/card_2_bg.png);
+                }
+
+                &.category_36000116024{
+                    background-image: url(http://farmarcas.com.br/radar/imagens_freshdesk/card_3_bg.png);
+                }
+
+                &.category_36000116028{
+                    background-image: url(http://farmarcas.com.br/radar/imagens_freshdesk/card_4_bg.png);
+                }
+
+                &:hover .heading:after{ filter: invert(100%) brightness(0.5); }
             }
 
             h3 a {
-                color: #9aa1a6;
-                font-weight: 300;
+                color: white;
+                font-weight: 100;
                 font-size: 25px;
             }
         }
@@ -184,6 +252,79 @@ li.article-item:before{content:"\f22b"}
                 display: flex;
                 padding: 20px;
                 justify-content: center;
+            }
+        }
+    }
+
+    .principais-conteudos{
+        background-color: #fff;
+
+        &-header{
+            padding: 10px 15px;
+
+            h3{
+                color: #0b5078;
+                font-size: 25px;
+            }
+        }
+
+        &-list{
+            min-height: 430px;
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+        }
+
+        &-item{
+            border-radius: 8px;
+            background-color: #e7e7e7;
+            min-height: 100%;
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-weight: 700;
+            padding: 20px;
+            font-size: 17px;
+            color: black;
+            border-bottom: 5px solid transparent;
+            transition: all .3s;
+        }
+
+        &-item-wrapper{
+            flex: 0 0 25%;
+            max-width: 25%;
+            padding: 13px 13px 8px 13px;
+            min-height: 100%;
+            min-height: 100px;
+            display: flex;
+            position: relative;
+
+            &:after {
+                content: '';
+                width: 7px;
+                height: 12px;
+                background: url(http://farmarcas.com.br/radar/imagens_freshdesk/icon-arrow-right.png);
+                position: absolute;
+                bottom: 25px;
+                right: 25px;
+                filter: grayscale(100%);
+                transition: all .3s;
+            }
+
+            &:hover{
+                .principais-conteudos-item{ border-bottom-color: #d6d6d6; }
+                &:after{ filter: none; }
+            }
+
+            @media screen and (max-width: 768px){
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            @media screen and (min-width: 769px) and (max-width: 1024px){
+                flex: 0 0 33%;
+                max-width: 33%;
             }
         }
     }

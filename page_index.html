@@ -1,40 +1,46 @@
 {% if portal.has_solutions %}
 <section class="main content rounded-6 fc-portal-solution-home" id="solutions-index-home">
 	{% for category in portal.solution_categories %}
-		{% if category.folders_count > 0 %}
-		<div class="cs-s">
-            <div class="solution">
-                <h3 class="heading">{{ category.name | link_to: category.url }}</h3>
-                <!-- <div class="cs-g-c">
-                    {% for folder in category.folders %}
-                        <section class="cs-g article-list">
-                            <div class="list-lead">
-                                {{ folder | link_to_folder_with_count }}
-                            </div>
-                            {{ folder | article_list:5 }}
-                        </section>
-                    {% else %}
-                        {{ portal | filler_for_solutions }}
-                    {% endfor %}
-                </div> -->
-            </div>
+	{% if category.folders_count > 0 %}
+	<div class="cs-s">
+		<div class="solution category_{{ category.id }}">
+			<h3 class="heading left">{{ category.name | link_to: category.url }}</h3>
+			<!-- <div class="cs-g-c">
+				{% for folder in category.folders %}
+				<section class="cs-g article-list">
+					<div class="list-lead">
+						{{ folder | link_to_folder_with_count }}
+					</div>
+					{{ folder | article_list:5 }}
+				</section>
+				{% else %}
+				{{ portal | filler_for_solutions }}
+				{% endfor %}
+			</div> -->
 		</div>
-		{% endif %}
+	</div>
+	{% endif %}
 	{% endfor %}
 </section>
 
-<section class="main content" id="principais-conteudos">
-	<h3>Principais Conteudos</h3>
-	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ut nam suscipit mollitia molestias explicabo.</p>
-	{% for category in portal.solution_categories %}
+<section class="" class="principais-conteudos">
+	<div class="principais-conteudos-header">
+		<h3>Principais Conteudos</h3>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ut nam suscipit mollitia molestias explicabo.</p>
+	</div>
+	<div class="principais-conteudos-list">
+		{% for category in portal.solution_categories %}
 		{% if category.folders_count > 0 %}
-			{% for folder in category.folders %}
-				{% for article in folder.articles %}
-					<p>{{ article.title }} - {{ article.hits }} </p>
-				{% endfor %}
-			{% endfor %}
+		{% for folder in category.folders %}
+		{% for article in folder.articles %}
+		<div class="principais-conteudos-item-wrapper" order="{{ article.thumbs_up }}">
+			<a href="{{ article.url	}}" class="principais-conteudos-item"> {{ article.title }} </a>
+		</div>
+		{% endfor %}
+		{% endfor %}
 		{% endif %}
-	{% endfor %}
+		{% endfor %}
+	</div>
 </section>
 {% endif %}
 
@@ -42,27 +48,57 @@
 <section class="sidebar content community-sidebar rounded-6 min-height-on-desktop fc-community-sidebar" id="home-community-sidebar">
 	<h2 class="heading">{% translate portal.community_forums %}</h2>
 	{% if portal.topics_count > 0 %}
-		<p class="intro">{% translate portal.showing_recent_updates %}</p>
-		<div>{{ portal | link_to_start_topic }}</div>
-		{% for category in portal.forum_categories %}
-			{% if category.forums_count > 0 %}
-				<div class="cs-s">
-					<h3 class="heading">{{ category.name | link_to: category.url }}</h3>
-					<div class="cs-g-c">
-					{% for forum in category.forums %}
-						<section class="cs-g topic-list">
-							<div class="list-lead badge-{{ forum.type_class }}">
-								{{ forum | link_to_forum_with_count }}
-							</div>
-							{{ forum | topic_list:3 }}
-						</section>
-					{% endfor %}
-					</div>
+	<p class="intro">{% translate portal.showing_recent_updates %}</p>
+	<div>{{ portal | link_to_start_topic }}</div>
+	{% for category in portal.forum_categories %}
+	{% if category.forums_count > 0 %}
+	<div class="cs-s">
+		<h3 class="heading">{{ category.name | link_to: category.url }}</h3>
+		<div class="cs-g-c">
+			{% for forum in category.forums %}
+			<section class="cs-g topic-list">
+				<div class="list-lead badge-{{ forum.type_class }}">
+					{{ forum | link_to_forum_with_count }}
 				</div>
-			{% endif %}
-		{% endfor %}
+				{{ forum | topic_list:3 }}
+			</section>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+	{% endfor %}
 	{% else %}
-		{{ portal | filler_for_forums }}
+	{{ portal | filler_for_forums }}
 	{% endif %}
 </section>
 {% endif %}
+
+
+<script>
+	'use strict';
+
+	jQuery(document).ready(function(){
+		let principais_conteudos_array = [];
+
+		jQuery('[order]').each(function() {
+			principais_conteudos_array.push(jQuery(this).attr('order'))
+		})
+
+		findHighest(12, principais_conteudos_array).map( x => {
+			jQuery(`[order="${x}"]:not(.active)`).first().addClass('active')
+		});
+
+		jQuery(`[order]:not(.active)`).hide();
+
+		function findHighest(count, array){
+			array.sort(function(a,b) {
+				if (a < b) { return 1; }
+				else if (a == b) { return 0; }
+				else { return -1; }
+			});
+
+			return array.slice(0, count);
+		}
+	})
+
+</script>

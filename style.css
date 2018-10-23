@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300");
 .c-wrapper {
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -537,8 +538,14 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   font-weight: 600;
 }
 
+.header-wrapper {
+  background-image: url("http://farmarcas.com.br/radar/imagens_freshdesk/header_bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
 .banner {
-  background-color: #303033;
+  background-color: transparent;
   border: none;
 }
 
@@ -550,14 +557,48 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   background-color: #3e3e42;
 }
 
+.heading {
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.heading:after {
+  content: '';
+  position: absolute;
+  width: 57px;
+  border-radius: 3px;
+  height: 5px;
+  background: -webkit-gradient(linear, left top, right top, from(#ff8900), to(#fe4215));
+  background: linear-gradient(to right, #ff8900, #fe4215);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.heading.left:after {
+  left: 30px;
+}
+
+.heading:hover:after {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
 .help-center {
   padding: 0px;
   width: 100%;
-  background: #303033;
+  background: transparent;
 }
 
 .help-center .hc-search {
   width: 100%;
+}
+
+.help-center .hc-search-form {
+  border: none;
 }
 
 .help-center .hc-search-c {
@@ -585,17 +626,26 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
 
 .help-center .hc-search-input input {
   font-size: 18px;
-  height: 70px;
+  height: 80px;
 }
 
 .help-center .hc-search-button .btn {
-  height: 70px;
-  border-radius: 0;
+  height: 80px;
+  border-radius: 0 3px 3px 0;
+  background: -webkit-gradient(linear, left top, right top, from(#ff8900), to(#fe4215));
+  background: linear-gradient(to right, #ff8900, #fe4215);
 }
 
 .help-center .hc-search-button .btn .mobile-icon-search {
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4);
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background-image: url("http://farmarcas.com.br/radar/imagens_freshdesk/icon_search.png");
+  background-size: cover;
+}
+
+.help-center .hc-search-button .btn .mobile-icon-search:before {
+  display: none;
 }
 
 .help-center-sc .hc-search {
@@ -646,6 +696,12 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   display: block;
 }
 
+#solutions-index-home .cs-s:nth-child(n+4) h3 {
+  width: initial;
+  display: inline-block;
+  margin: 0 auto;
+}
+
 #solutions-index-home .cs-s:nth-child(-n+3) .solution {
   min-height: 250px;
 }
@@ -660,30 +716,46 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
 }
 
 #solutions-index-home .cs-s .solution {
-  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   padding: 20px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   min-height: 100px;
+  background-size: cover;
+  background-position: center;
+}
+
+#solutions-index-home .cs-s .solution.category_36000115330 {
+  background-image: url(http://farmarcas.com.br/radar/imagens_freshdesk/card_1_bg.png);
+}
+
+#solutions-index-home .cs-s .solution.category_36000116002 {
+  background-image: url(http://farmarcas.com.br/radar/imagens_freshdesk/card_2_bg.png);
+}
+
+#solutions-index-home .cs-s .solution.category_36000116024 {
+  background-image: url(http://farmarcas.com.br/radar/imagens_freshdesk/card_3_bg.png);
+}
+
+#solutions-index-home .cs-s .solution.category_36000116028 {
+  background-image: url(http://farmarcas.com.br/radar/imagens_freshdesk/card_4_bg.png);
+}
+
+#solutions-index-home .cs-s .solution:hover .heading:after {
+  -webkit-filter: invert(100%) brightness(0.5);
+          filter: invert(100%) brightness(0.5);
 }
 
 #solutions-index-home .cs-s h3 a {
-  color: #9aa1a6;
-  font-weight: 300;
+  color: white;
+  font-weight: 100;
   font-size: 25px;
 }
 
@@ -721,6 +793,110 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.principais-conteudos {
+  background-color: #fff;
+}
+
+.principais-conteudos-header {
+  padding: 10px 15px;
+}
+
+.principais-conteudos-header h3 {
+  color: #0b5078;
+  font-size: 25px;
+}
+
+.principais-conteudos-list {
+  min-height: 430px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.principais-conteudos-item {
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  min-height: 100%;
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-weight: 700;
+  padding: 20px;
+  font-size: 17px;
+  color: black;
+  border-bottom: 5px solid transparent;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.principais-conteudos-item-wrapper {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  max-width: 25%;
+  padding: 13px 13px 8px 13px;
+  min-height: 100%;
+  min-height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.principais-conteudos-item-wrapper:after {
+  content: '';
+  width: 7px;
+  height: 12px;
+  background: url(http://farmarcas.com.br/radar/imagens_freshdesk/icon-arrow-right.png);
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.principais-conteudos-item-wrapper:hover .principais-conteudos-item {
+  border-bottom-color: #d6d6d6;
+}
+
+.principais-conteudos-item-wrapper:hover:after {
+  -webkit-filter: none;
+          filter: none;
+}
+
+@media screen and (max-width: 768px) {
+  .principais-conteudos-item-wrapper {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .principais-conteudos-item-wrapper {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33%;
+            flex: 0 0 33%;
+    max-width: 33%;
+  }
 }
 
 .fc-solution-category .cs-g.article-list {
