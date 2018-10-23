@@ -516,7 +516,13 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
 }
 
 .content, .content-form, .content-light {
-  padding: 10px 30px;
+  padding: 10px 0px;
+}
+
+@media screen and (max-width: 1024px) {
+  .content, .content-form, .content-light {
+    padding: 10px 30px;
+  }
 }
 
 .help-center-sc .hc-search .hc-search-input {
@@ -759,42 +765,6 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   font-size: 25px;
 }
 
-#solutions-home .heading, #solutions-home .heading + p {
-  text-align: center;
-}
-
-#solutions-home .cs-g-c {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-#solutions-home .article-list {
-  min-width: 33%;
-  max-width: 50%;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  width: auto;
-  text-align: center;
-  padding: 15px;
-}
-
-#solutions-home .article-list .list-lead {
-  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 20px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .principais-conteudos {
   background-color: #fff;
 }
@@ -842,6 +812,10 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   border-bottom: 5px solid transparent;
   -webkit-transition: all .3s;
   transition: all .3s;
+}
+
+.principais-conteudos-item:hover {
+  color: black;
 }
 
 .principais-conteudos-item-wrapper {
@@ -897,6 +871,42 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
             flex: 0 0 33%;
     max-width: 33%;
   }
+}
+
+#solutions-home .heading, #solutions-home .heading + p {
+  text-align: center;
+}
+
+#solutions-home .cs-g-c {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#solutions-home .article-list {
+  min-width: 33%;
+  max-width: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: auto;
+  text-align: center;
+  padding: 15px;
+}
+
+#solutions-home .article-list .list-lead {
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .fc-solution-category .cs-g.article-list {

@@ -1,0 +1,29 @@
+#solutions-home{
+    .heading{
+        &, & + p{
+            text-align: center;
+        }
+    }
+
+    .cs-g-c{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .article-list{
+        min-width: 33%;
+        max-width: 50%;
+        flex: 1;
+        width: auto;
+        text-align: center;
+        padding: 15px;
+
+        .list-lead{
+            box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+            border-radius: 8px;
+            display: flex;
+            padding: 20px;
+            justify-content: center;
+        }
+    }
+}
