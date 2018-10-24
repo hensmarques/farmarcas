@@ -15,7 +15,7 @@
 }
 
 .page-tabs{
-    background-color: #3e3e42;
+    background-color: transparent;
 
     .nav-link a{
         color: white;
@@ -113,6 +113,8 @@
 }
 
 .header-wrapper:not(.home){
+    background: linear-gradient(to right, #07274e, #095c68);
+
     .help-center-sc{ background-color: white; }
 }
 

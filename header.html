@@ -44,6 +44,13 @@
 				</div>
 			{% endif %}
 
+			{% if portal.current_tab and portal.current_tab == "tickets" %}
+				<div class="breadcrumb">
+					<a href="{{ portal.solutions_home_url }}">Soluções </a>
+					<div> > &nbsp;</div> Chamados
+				</div>
+			{% endif %}
+
 			<div class="hc-search">
 				<div class="hc-search-c">
 					{% snippet search_form %}

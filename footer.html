@@ -26,6 +26,32 @@
 			if(jQuery('h2.page_category_home_36000116002').length > 0){
 				jQuery('body').addClass('solutions administrar-com-eficiencia');
 			}
+
+			if(jQuery('h2.page_category_home_36000116028').length > 0){
+				jQuery('body').addClass('solutions perguntas-frequentes');
+			}
 		}
+
+		jQuery('.sidetabs + .sidetabs-content .article-list').first().addClass('active');
+		jQuery('.sidetabs .sidetabs-item').first().addClass('active');
+		jQuery('.sidetabs .sidetabs-item').click(function(){
+			jQuery('.sidetabs .sidetabs-item, .sidetabs + .sidetabs-content .article-list').removeClass('active');
+			jQuery( jQuery(this).data('target') ).addClass('active');
+			jQuery(this).addClass('active');
+		})
+
+		jQuery('.sidetabs + .sidetabs-content li a').click(function(e){
+			e.preventDefault();
+		});
+
+		jQuery('.sidetabs + .sidetabs-content li').click(function(e){
+			e.preventDefault();
+
+			if(jQuery(this).hasClass('active')){
+				jQuery(this).removeClass('active');
+			}else{
+				jQuery(this).addClass('active');
+			}
+		});
 	});
 </script>

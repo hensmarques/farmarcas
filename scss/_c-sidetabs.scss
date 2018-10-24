@@ -1,0 +1,72 @@
+.sidetabs {
+    width: 25%;
+    float: left;
+    margin-top: 6px;
+
+    &-item{
+        padding: 20px 15px;
+        font-weight: 300;
+        cursor: pointer;
+        font-size: 16px;
+
+        &.active{
+            background: #e7e7e7;
+            font-weight: 500;
+        }
+    }
+
+    & + .sidetabs-content {
+        width: 75%;
+        float: right;
+        padding-left: 40px;
+        border-left: 1px solid #e7e7e7;
+
+        .article-list{
+            display: none;
+
+            &.active{
+                display: block;
+            }
+        }
+
+        .article-title{
+            position: relative;
+            display: block;
+
+            &:after{
+                content: '';
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 16px;
+                height: 16px;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url("http://farmarcas.com.br/radar/imagens_freshdesk/icon_plus.png");
+            }
+        }
+
+        .article-content{
+            white-space: normal;
+            margin: 0;
+            font-weight: 300;
+            color: #676767;
+            max-height: 0px;
+            overflow: hidden;
+            transition: max-height .8s;
+        }
+
+        li.active{
+            .article-title:after{
+                background-image: url("http://farmarcas.com.br/radar/imagens_freshdesk/icon_less.png");
+            }
+
+            .article-content{
+                max-height: 600px;
+                margin: 10px 20px;
+            }
+        }
+    }
+}

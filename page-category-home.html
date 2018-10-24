@@ -6,10 +6,21 @@
         <h2 class="heading no-detail page_category_home_{{ category.id }}">{{ category.name | h}}</h2>
         <p>{{ category.description }}</p>
     </div>
-    <div class="cs-g-c">
+
+    {% if category.id == 36000116028 %}
+        <div class="sidetabs">
+            {% for folder in category.folders %}
+                {% if folder.articles_count > 0 %}
+                    <div class="sidetabs-item" data-target=".folder_{{ folder.id }}"> {{ folder.name }} </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="sidetabs-content cs-g-c">
         {% for folder in category.folders %}
             {% if folder.articles_count > 0 %}
-                <section class="cs-g article-list">
+                <section class="cs-g article-list folder_{{ folder.id }}">
                     <div class="list-lead">
                         <img src="http://farmarcas.com.br/radar/imagens_freshdesk/icon-arrow-right.png" width="7" alt=""> {{ folder.name }}
                     </div>
@@ -20,8 +31,10 @@
                                 <a class="article-title" href="{{article.url}}" title="{{article.title | h}}"> {{article.title |h}} </a>
                                 <div class="article-author">
                                     <p>Escrito por: <strong>{{ article.author }}</strong></p>
-
                                 </div>
+                                {% if category.id == 36000116028 %}
+                                <div class="article-content"> {{ article.body }} </div>
+                                {% endif %}
                             </div>
                         </li>
                         {% endfor %}
