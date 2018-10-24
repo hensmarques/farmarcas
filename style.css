@@ -1081,7 +1081,11 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   z-index: 1000;
 }
 
-#ticket-list {
+#ticket-list > #ticket-list {
+  width: 100%;
+}
+
+#ticket-filter-container + #ticket-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1089,9 +1093,11 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   border-top: 0;
   padding: 15px;
   border-radius: 0 0 8px 8px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-#ticket-list .c-list {
+#ticket-filter-container + #ticket-list .c-list {
   margin: 15px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc(33.3% - 30px);
@@ -1099,6 +1105,88 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   max-width: calc(33.3% - 30px);
   background: #e7e7e7;
   border-radius: 8px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+#ticket-filter-container + #ticket-list .c-list:not(.fixed) {
+  opacity: 0;
+}
+
+#ticket-filter-container + #ticket-list .c-list.fixed {
+  opacity: 1;
+}
+
+#ticket-filter-container + #ticket-list .c-list .status-source {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 0 7px 0 5px;
+  position: relative;
+  width: 35px;
+  margin-right: 11px;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+#ticket-filter-container + #ticket-list .c-list .status-source:before {
+  content: '';
+  background-image: url(http://farmarcas.com.br/radar/imagens_freshdesk/icon_ticket.png?adfads);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+#ticket-filter-container + #ticket-list .c-list .ticket-brief {
+  padding-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 0;
+}
+
+#ticket-filter-container + #ticket-list .c-list .ticket-brief .ellipsis {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  color: black;
+  font-size: 18px;
+}
+
+#ticket-filter-container + #ticket-list .c-list .ticket-brief .help-text {
+  margin: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 55%;
+          flex: 0 0 55%;
+  max-width: 55%;
+}
+
+#ticket-filter-container + #ticket-list .c-list .ticket-brief .label-small {
+  margin: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 45%;
+          flex: 0 0 45%;
+  max-width: 45%;
+  white-space: normal;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  background: #727272;
+  border-radius: 5px;
+}
+
+#ticket-filter-container + #ticket-list .c-list .ticket-brief .label-small.label-status-pending {
+  background-color: #f4d64a;
+  color: black;
+}
+
+#ticket-filter-container + #ticket-list .c-list .ticket-brief .label-small.label-status-open {
+  background-color: #15af00;
 }
 
 .sidetabs {

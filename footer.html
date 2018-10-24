@@ -32,6 +32,13 @@
 			}
 		}
 
+
+		if(jQuery('.header-wrapper').hasClass('tickets')){
+			fixTicketHtml();
+
+			setInterval(fixTicketHtml, 3000);
+		}
+
 		jQuery('.sidetabs + .sidetabs-content .article-list').first().addClass('active');
 		jQuery('.sidetabs .sidetabs-item').first().addClass('active');
 		jQuery('.sidetabs .sidetabs-item').click(function(){
@@ -54,4 +61,14 @@
 			}
 		});
 	});
+
+	function fixTicketHtml(){
+		jQuery('#ticket-list .c-list').each(function(){
+			if(!jQuery(this).hasClass('fixed')){
+				jQuery(this).find('.ticket-brief').append(jQuery(this).find('span.label-small').clone().wrap('<div>').parent().html());
+				jQuery(this).find('span.label-small').first().remove();
+				jQuery(this).addClass('fixed');
+			}
+		});
+	}
 </script>
