@@ -563,12 +563,24 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   background-color: #3e3e42;
 }
 
+.page-tabs .nav-link a {
+  color: white;
+  font-weight: 100;
+  text-align: left;
+}
+
+.page-tabs .nav-link a.active {
+  font-weight: 300;
+  padding: 6px;
+}
+
 .heading {
   padding-bottom: 10px;
   position: relative;
+  color: #0b5078;
 }
 
-.heading:after {
+.heading:not(.no-detail):after {
   content: '';
   position: absolute;
   width: 57px;
@@ -635,23 +647,36 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   height: 80px;
 }
 
-.help-center .hc-search-button .btn {
+.home .hc-search-button .btn {
   height: 80px;
-  border-radius: 0 3px 3px 0;
-  background: -webkit-gradient(linear, left top, right top, from(#ff8900), to(#fe4215));
-  background: linear-gradient(to right, #ff8900, #fe4215);
+  border-radius: 0 5px 5px 0;
 }
 
-.help-center .hc-search-button .btn .mobile-icon-search {
-  display: inline-block;
+.home .hc-search-button .btn .mobile-icon-search {
   width: 28px;
   height: 28px;
+}
+
+.hc-search-button .btn {
+  border-radius: 0 3px 3px 0;
+  background: -webkit-gradient(linear, left top, right top, from(#ff8900), to(#fe4215)) !important;
+  background: linear-gradient(to right, #ff8900, #fe4215) !important;
+}
+
+.hc-search-button .btn .mobile-icon-search {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
   background-image: url("http://farmarcas.com.br/radar/imagens_freshdesk/icon_search.png");
   background-size: cover;
 }
 
-.help-center .hc-search-button .btn .mobile-icon-search:before {
+.hc-search-button .btn .mobile-icon-search:before {
   display: none;
+}
+
+.header-wrapper:not(.home) .help-center-sc {
+  background-color: white;
 }
 
 .help-center-sc .hc-search {
@@ -677,7 +702,15 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
 }
 
 .help-center-sc .hc-search input, .help-center-sc .hc-search .btn-primary {
-  border: 2px solid #e0e0e0;
+  border: 1px solid #f36500;
+}
+
+.breadcrumb {
+  margin: 0;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #solutions-index-home {
@@ -909,27 +942,73 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
           justify-content: center;
 }
 
+.solutions.comprar-bem .page-tabs {
+  background-color: #ff660a;
+}
+
+.solutions.administrar-com-eficiencia .page-tabs {
+  background-color: #135779;
+}
+
+.solutions.vender-mais .page-tabs {
+  background-color: #1d55c0;
+}
+
 .fc-solution-category .cs-g.article-list {
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .fc-solution-category .cs-g.article-list ul {
-  background: #ececec;
+  background: #ececec94;
   border-radius: 8px;
   padding: 15px 20px;
 }
 
 .fc-solution-category .cs-g.article-list ul li {
-  padding: 15px 40px;
+  padding: 12px 5px;
   border-bottom: 1px solid #ccc;
   margin-bottom: 0;
 }
 
 .fc-solution-category .cs-g.article-list ul li:last-child {
   border-bottom: none;
+  padding-bottom: 0px;
+}
+
+.fc-solution-category .cs-g.article-list ul li:first-child {
+  padding-top: 0px;
 }
 
 .fc-solution-category .cs-g.article-list ul li:before {
-  margin-left: 20px;
+  display: none;
+}
+
+.fc-solution-category .cs-g.article-list .article-title {
+  font-weight: 500;
+  color: black !important;
+  font-size: 18px;
+}
+
+.fc-solution-category .cs-g.article-list .article-author p {
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.solutions-category-header {
+  padding-bottom: 45px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.102), rgba(0, 0, 0, 0.031), transparent 30px);
+  border-radius: 0 0 7px 8px;
+  margin-bottom: 20px;
+}
+
+.list-lead {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fe5e0c;
+}
+
+.list-lead img {
+  margin-top: -3px;
 }
 /*# sourceMappingURL=style.css.map */

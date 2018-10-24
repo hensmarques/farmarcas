@@ -31,8 +31,19 @@
 
 	<!-- Search and page links for the page -->
 	{% if portal.current_tab and portal.current_tab != "home" %}
+
 	<section class="help-center-sc rounded-6">
 		<div class="page no-padding">
+			{% if portal.current_tab and portal.current_tab == "solutions" %}
+				<div class="breadcrumb">
+					<a href="{{ portal.solutions_home_url }}">Soluções </a>
+					{% if category.name %}
+					<div> > &nbsp;</div>
+					{{ category.name }}
+					{% endif %}
+				</div>
+			{% endif %}
+
 			<div class="hc-search">
 				<div class="hc-search-c">
 					{% snippet search_form %}

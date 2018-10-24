@@ -10,3 +10,22 @@
 		</nav>
 	</footer>
 {% endif %}
+
+<script>
+	jQuery(document).ready(function(){
+		if(jQuery('.header-wrapper').hasClass('solutions')){
+
+			if(jQuery('h2.page_category_home_36000115330').length > 0){
+				jQuery('body').addClass('solutions comprar-bem');
+			}
+
+			if(jQuery('h2.page_category_home_36000116024').length > 0){
+				jQuery('body').addClass('solutions vender-mais');
+			}
+
+			if(jQuery('h2.page_category_home_36000116002').length > 0){
+				jQuery('body').addClass('solutions administrar-com-eficiencia');
+			}
+		}
+	});
+</script>
