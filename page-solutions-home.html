@@ -2,16 +2,20 @@
     {% for category in portal.solution_categories %}
         {% if category.folders_count > 0 %}
             <div class="cs-s">
-                <h3 class="heading">
+                <h3 class="heading no-detail">
                     {{ category.name | link_to: category.url }}
                 </h3>
+                <p> {{ category.description }} </p>
                 <div class="cs-g-c">
                     {% for folder in category.folders %}
                         <section class="cs-g article-list">
                             <div class="list-lead">
-                                {{ folder | link_to_folder_with_count }}
+                                <img src="http://farmarcas.com.br/radar/imagens_freshdesk/icon_folder_{{ folder.id }}.png" alt="">
+                                <a href="{{ folder.url }}">
+                                    <div class="solution-folder-title">{{ folder.name }}</div>
+                                    <div class="solution-folder-description">{{ folder.description }}</div>
+                                </a>
                             </div>
-                            {{ folder | article_list:5 }}
                         </section>
                     {% else %}
                         {{ portal | filler_for_solutions }}

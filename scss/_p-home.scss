@@ -9,6 +9,10 @@
         max-width: 100%;
         display: none;
 
+        @media screen and (max-width: 768px){
+            padding: 15px 5px;
+        }
+
         &:nth-child(-n+4) {
             display: block;
         }
@@ -114,6 +118,10 @@
         min-height: 100px;
         display: flex;
         position: relative;
+
+        @media screen and (max-width: 768px){
+            padding: 8px 5px;
+        }
 
         &:after {
             content: '';
