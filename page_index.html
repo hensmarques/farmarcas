@@ -4,7 +4,7 @@
 	{% if category.folders_count > 0 %}
 	<div class="cs-s">
 		<div class="solution category_{{ category.id }}">
-			<h3 class="heading left">{{ category.name | link_to: category.url }}</h3>
+			<h3 class="heading with-detail left">{{ category.name | link_to: category.url }}</h3>
 			<!-- <div class="cs-g-c">
 				{% for folder in category.folders %}
 				<section class="cs-g article-list">
@@ -46,14 +46,14 @@
 
 {% if portal.has_forums %}
 <section class="sidebar content community-sidebar rounded-6 min-height-on-desktop fc-community-sidebar" id="home-community-sidebar">
-	<h2 class="heading">{% translate portal.community_forums %}</h2>
+	<h2 class="heading with-detail">{% translate portal.community_forums %}</h2>
 	{% if portal.topics_count > 0 %}
 	<p class="intro">{% translate portal.showing_recent_updates %}</p>
 	<div>{{ portal | link_to_start_topic }}</div>
 	{% for category in portal.forum_categories %}
 	{% if category.forums_count > 0 %}
 	<div class="cs-s">
-		<h3 class="heading">{{ category.name | link_to: category.url }}</h3>
+		<h3 class="heading with-detail">{{ category.name | link_to: category.url }}</h3>
 		<div class="cs-g-c">
 			{% for forum in category.forums %}
 			<section class="cs-g topic-list">

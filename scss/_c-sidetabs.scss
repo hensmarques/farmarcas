@@ -3,6 +3,10 @@
     float: left;
     margin-top: 6px;
 
+    @media screen and (max-width: 768px){
+        display: none;
+    }
+
     &-item{
         padding: 20px 15px;
         font-weight: 300;
@@ -16,22 +20,28 @@
     }
 
     & + .sidetabs-content {
-        width: 75%;
-        float: right;
-        padding-left: 40px;
-        border-left: 1px solid #e7e7e7;
+        width: 100%;
 
-        .article-list{
-            display: none;
+        @media screen and (min-width: 769px){
+            width: 75%;
+            float: right;
+            padding-left: 40px;
+            border-left: 1px solid #e7e7e7;
 
-            &.active{
-                display: block;
+            .article-list{
+                display: none;
+
+                &.active{
+                    display: block;
+                }
             }
         }
 
         .article-title{
             position: relative;
             display: block;
+            padding-right: 20px;
+            white-space: initial;
 
             &:after{
                 content: '';
@@ -45,6 +55,10 @@
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-image: url("http://farmarcas.com.br/radar/imagens_freshdesk/icon_plus.png");
+
+                @media screen and (max-width: 768px){
+                    right: 0;
+                }
             }
         }
 

@@ -557,6 +557,10 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   }
 }
 
+.sidebar.content {
+  padding: 10px 20px !important;
+}
+
 .header-wrapper {
   background-image: url("http://farmarcas.com.br/radar/imagens_freshdesk/header_bg.png");
   background-size: cover;
@@ -576,6 +580,27 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   background-color: transparent;
 }
 
+@media screen and (max-width: 768px) {
+  .page-tabs {
+    line-height: 20px;
+  }
+  .page-tabs .nav-link {
+    background: -webkit-gradient(linear, left top, right top, from(#07274e), to(#095c68));
+    background: linear-gradient(to right, #07274e, #095c68);
+    margin-top: 10px;
+    border-radius: 0 0 8px 8px;
+  }
+  .page-tabs .nav-link a {
+    background: transparent;
+    padding: 5px 16px !important;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .page-tabs .nav-link a.active {
+    background: #00000038;
+  }
+}
+
 .page-tabs .nav-link a {
   color: white;
   font-weight: 100;
@@ -593,7 +618,7 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   color: #0b5078;
 }
 
-.heading:not(.no-detail):after {
+.heading.with-detail:after {
   content: '';
   position: absolute;
   width: 57px;
@@ -737,6 +762,7 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
     position: relative;
     width: 100%;
     padding: 15px;
+    z-index: 0;
   }
 }
 
@@ -1082,7 +1108,7 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
 }
 
 .solutions.perguntas-frequentes .page-tabs {
-  background-color: #1d55c0;
+  background-color: rgba(0, 0, 0, 0.22);
 }
 
 @media screen and (max-width: 768px) {
@@ -1090,6 +1116,7 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
     border: none;
     -webkit-box-shadow: none;
             box-shadow: none;
+    padding: 0 10px !important;
   }
 }
 
@@ -1321,6 +1348,12 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   margin-top: 6px;
 }
 
+@media screen and (max-width: 768px) {
+  .sidetabs {
+    display: none;
+  }
+}
+
 .sidetabs-item {
   padding: 20px 15px;
   font-weight: 300;
@@ -1334,23 +1367,29 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
 }
 
 .sidetabs + .sidetabs-content {
-  width: 75%;
-  float: right;
-  padding-left: 40px;
-  border-left: 1px solid #e7e7e7;
+  width: 100%;
 }
 
-.sidetabs + .sidetabs-content .article-list {
-  display: none;
-}
-
-.sidetabs + .sidetabs-content .article-list.active {
-  display: block;
+@media screen and (min-width: 769px) {
+  .sidetabs + .sidetabs-content {
+    width: 75%;
+    float: right;
+    padding-left: 40px;
+    border-left: 1px solid #e7e7e7;
+  }
+  .sidetabs + .sidetabs-content .article-list {
+    display: none;
+  }
+  .sidetabs + .sidetabs-content .article-list.active {
+    display: block;
+  }
 }
 
 .sidetabs + .sidetabs-content .article-title {
   position: relative;
   display: block;
+  padding-right: 20px;
+  white-space: initial;
 }
 
 .sidetabs + .sidetabs-content .article-title:after {
@@ -1366,6 +1405,12 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url("http://farmarcas.com.br/radar/imagens_freshdesk/icon_plus.png");
+}
+
+@media screen and (max-width: 768px) {
+  .sidetabs + .sidetabs-content .article-title:after {
+    right: 0;
+  }
 }
 
 .sidetabs + .sidetabs-content .article-content {
