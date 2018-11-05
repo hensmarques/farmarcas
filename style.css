@@ -1240,12 +1240,6 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   display: none;
 }
 
-.ticket-main #ticket-toolbar {
-  width: initial;
-  display: block;
-  border: none;
-}
-
 #ticket-toolbar {
   position: relative;
   border: 1px solid #d4d4d4;
@@ -1463,6 +1457,103 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
 
 #ticket-filter-container + #ticket-list .c-ticket-row .ticket-brief .label-small.label-status-open {
   background-color: #15af00;
+}
+
+.tickets .help-center-sc {
+  display: none;
+}
+
+.tickets .breadcrumb a:before, .tickets .breadcrumb span:before {
+  content: '>';
+}
+
+.tickets .breadcrumb a:first-child:before {
+  content: none;
+}
+
+.tickets .ticket-main .alert-ticket-status {
+  margin: 20px 0;
+}
+
+.tickets .ticket-main #ticket-toolbar {
+  width: initial;
+  display: block;
+  border: none;
+}
+
+.tickets .ticket-main #ticket-toolbar .btn {
+  font-size: 12px;
+  text-transform: capitalize;
+  letter-spacing: inherit;
+  text-shadow: none;
+  font-weight: 500;
+  border: none;
+  text-shadow: none;
+  background-color: #f0f0f0;
+  color: #898989;
+}
+
+.tickets .ticket-main #ticket-toolbar .btn-orange {
+  color: white;
+  background: #e7640a;
+}
+
+.tickets .agent-details {
+  margin: -10px -20px 10px -20px;
+  background: #e9e9e9;
+  padding-bottom: 50px;
+}
+
+.tickets .agent-details h3.lead {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.tickets .agent-details .agent_name_text {
+  padding-top: 5px;
+  font-size: 25px;
+}
+
+.tickets .ticket-form-sidebar {
+  margin-left: 10px;
+  width: calc(34% - 10px);
+}
+
+.tickets .fc-ticket-view {
+  border: none;
+}
+
+.tickets #ticket-description .p-content {
+  border: none;
+}
+
+.tickets #ticket-sidebar-details .lead-small {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.tickets #ticket-sidebar-details .control-label {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.tickets #ticket-sidebar-details .status-label + .lead-small p {
+  margin: 0;
+  display: inline-block;
+  white-space: normal;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+  background: #727272;
+  border-radius: 5px;
+  padding: 0px 25px;
+}
+
+.tickets #helpdesk_ticket_submit {
+  color: white !important;
+  letter-spacing: initial !important;
+  font-weight: 400 !important;
+  border: none !important;
 }
 
 .sidetabs {

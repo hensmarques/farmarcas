@@ -1,0 +1,93 @@
+.tickets{
+    .help-center-sc{ display: none; }
+    .breadcrumb a:before, .breadcrumb span:before{ content: '>'; }
+    .breadcrumb a:first-child:before { content: none; }
+
+    .ticket-main{
+
+        .alert-ticket-status{ margin: 20px 0; }
+
+        #ticket-toolbar{
+            width: initial;
+            display: block;
+            border: none;
+
+            .btn{
+                font-size: 12px;
+                text-transform: capitalize;
+                letter-spacing: inherit;
+                text-shadow: none;
+                font-weight: 500;
+                border: none;
+                text-shadow: none;
+                background-color: #f0f0f0;
+                color: #898989;
+
+                &-orange{
+                    color: white;
+                    background: #e7640a;
+                }
+            }
+        }
+    }
+
+    .agent-details{
+        margin: -10px -20px 10px -20px;
+        background: #e9e9e9;
+        padding-bottom: 50px;
+
+        h3.lead{
+            font-weight: 400;
+            font-size: 13px;
+        }
+
+        .agent_name_text{
+            padding-top: 5px;
+            font-size: 25px;
+        }
+    }
+
+    .ticket-form-sidebar{
+        margin-left: 10px;
+        width: calc(34% - 10px);
+    }
+
+    .fc-ticket-view{
+        border: none;
+    }
+
+    #ticket-description{
+        .p-content{ border: none; }
+    }
+
+    #ticket-sidebar-details{
+        .lead-small{
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .control-label{
+            font-weight: 400;
+            font-size: 12px;
+        }
+
+        .status-label + .lead-small p{
+            margin: 0;
+            display: inline-block;
+            white-space: normal;
+            font-size: 14px;
+            text-align: center;
+            color: white;
+            background: #727272;
+            border-radius: 5px;
+            padding: 0px 25px;
+        }
+    }
+
+    #helpdesk_ticket_submit{
+        color: white !important;
+        letter-spacing: initial !important;
+        font-weight: 400 !important;
+        border: none !important;
+    }
+}
