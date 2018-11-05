@@ -1240,6 +1240,12 @@ c-row.c-article-row .description-text, .c-row.c-article-row .help-text {
   display: none;
 }
 
+.ticket-main #ticket-toolbar {
+  width: initial;
+  display: block;
+  border: none;
+}
+
 #ticket-toolbar {
   position: relative;
   border: 1px solid #d4d4d4;
