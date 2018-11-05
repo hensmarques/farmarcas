@@ -35,6 +35,9 @@
 
 		if(jQuery('.header-wrapper').hasClass('tickets')){
 			fixTicketHtml();
+			setTimeout(function(){
+				jQuery('#ticket-filters .dropdown-menu li').first().find('a').trigger('click');
+			}, 1000);
 
 			setInterval(fixTicketHtml, 3000);
 		}
@@ -63,7 +66,7 @@
 	});
 
 	function fixTicketHtml(){
-		jQuery('#ticket-list .c-list').each(function(){
+		jQuery('#ticket-list .c-ticket-row').each(function(){
 			if(!jQuery(this).hasClass('fixed')){
 				jQuery(this).find('.ticket-brief').append(jQuery(this).find('span.label-small').clone().wrap('<div>').parent().html());
 				jQuery(this).find('span.label-small').first().remove();

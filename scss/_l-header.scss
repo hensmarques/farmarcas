@@ -29,7 +29,7 @@
                 background: transparent;
                 padding: 5px 16px !important;
                 font-size: 14px;
-                font-weight: 300;
+                font-weight: 400;
 
                 &.active{
                     background: #00000038;
@@ -44,7 +44,7 @@
         text-align: left;
 
         &.active{
-            font-weight: 300;
+            font-weight: 400;
             padding: 6px;
         }
     }
@@ -160,6 +160,20 @@
     background: linear-gradient(to right, #07274e, #095c68);
 
     .help-center-sc{ background-color: white; }
+
+    .page.no-padding{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        #header-tabs{ flex: 1 }
+
+        .hc-search{
+            max-width: 38%;
+            flex: 1;
+            padding-right: 0;
+        }
+    }
 }
 
 .help-center-sc{
@@ -196,6 +210,29 @@
 
 .breadcrumb{
     margin: 0;
-    font-weight: 300;
+    font-weight: 400;
     display: flex;
+}
+
+.banner-nav{
+
+    @media screen and (max-width: 768px){
+        display: flex !important;
+        justify-content: flex-end;
+    }
+
+    a{
+        color: white;
+        font-size: 13px;
+        vertical-align: -4px;
+        margin-right: 4px;
+
+        @media screen and (max-width: 768px){
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        &:hover{ color: white; }
+        &:after{ display: none; }
+    }
 }

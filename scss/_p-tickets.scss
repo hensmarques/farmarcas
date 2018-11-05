@@ -2,10 +2,12 @@
 
 #ticket-toolbar{
     position: relative;
-    overflow: hidden;
     border: 1px solid #d4d4d4;
     border-radius: 8px 8px 0 0;
     border-bottom: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
 
     .list-lead.dropdown-toggle{ display: none; }
 
@@ -18,10 +20,20 @@
         border: none;
         background: linear-gradient(to top, rgba(0,0,0,0.102),rgba(0,0,0,0.031),rgba(0,0,0,0) 30px);
         border-radius: 0 0 7px 8px;
+        flex: 100%;
+        min-width: 100%;
+
+        @media screen and (max-width: 768px){
+            flex-direction: column;
+            text-align: center;
+        }
 
         li{
             padding: 15px 10px;
 
+            @media screen and (max-width: 768px){
+                padding: 5px 0;
+            }
             &.selected{
                 background: linear-gradient(to top, rgba(0,0,0,0.102),rgba(0,0,0,0.031),rgba(0, 0, 0, 0.06) 30px);
 
@@ -30,7 +42,7 @@
 
             a{
                 color: #666;
-                font-weight: 300;
+                font-weight: 400;
                 background: transparent !important;
             }
         }
@@ -42,6 +54,11 @@
         right: 0;
         top: 18px;
         z-index: 1000;
+
+        @media screen and (max-width: 768px){
+            position: relative;
+            float: right;
+        }
     }
 }
 
@@ -56,12 +73,24 @@
     flex-wrap: wrap;
 
     .c-list{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .c-ticket-row{
         margin: 15px;
         flex: 0 0 calc(33.3% - 30px);
         max-width: calc(33.3% - 30px);
         background: #e7e7e7;
         border-radius: 8px;
         transition: all .5s;
+
+        @media screen and (max-width: 768px){
+            margin: 15px 0;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
 
         &:not(.fixed){ opacity: 0; }
         &.fixed{ opacity: 1; }
@@ -101,6 +130,10 @@
                 margin: 0;
                 flex: 0 0 55%;
                 max-width: 55%;
+
+                @media screen and (max-width: 768px){
+                    white-space: normal !important;
+                }
             }
 
             .label-small{

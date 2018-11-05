@@ -7,7 +7,8 @@
 				{{ portal | logo }}
 			</div>
 			<nav class="banner-nav">
-				{{ portal | welcome_navigation }}
+				<a href="https://radar.farmarcas.com.br">Voltar para o Radar </a>
+				<a href="https://radar.farmarcas.com.br"><img src="http://farmarcas.com.br/radar/imagens_freshdesk/icon_home.png" alt=""></a>
 			</nav>
 		</div>
 	</header>
@@ -25,6 +26,11 @@
 				{% endfor %}
 			</div>
 			{% endif %}
+			<div class="hc-search">
+				<div class="hc-search-c">
+					{% snippet search_form %}
+				</div>
+			</div>
 		</div>
 	</nav>
 	{% endif %}
@@ -51,11 +57,7 @@
 				</div>
 			{% endif %}
 
-			<div class="hc-search">
-				<div class="hc-search-c">
-					{% snippet search_form %}
-				</div>
-			</div>
+
 			<div class="hc-nav {% if portal.contact_info %} nav-with-contact {% endif %}">
 				<!-- {{ portal | helpcenter_navigation }} -->
 			</div>
